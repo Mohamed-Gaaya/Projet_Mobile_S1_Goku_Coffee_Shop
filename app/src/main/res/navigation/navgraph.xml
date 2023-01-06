@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/allCoffeeListFragment">
+
+    <fragment
+        android:id="@+id/allCoffeeListFragment"
+        android:name="com.example.coffeeorderapp.AllCoffeeListFragment"
+        android:label="fragment_all_coffee_list"
+        tools:layout="@layout/fragment_all_coffee_list" >
+        <action
+            android:id="@+id/action_allCoffeeListFragment_to_coffeeDetailFragment"
+            app:destination="@id/coffeeDetailFragment" />
+        <action
+            android:id="@+id/action_allCoffeeListFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <argument
+            android:name="quantity"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_allCoffeeListFragment_to_loginActivity2"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_allCoffeeListFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_allCoffeeListFragment_self"
+            app:destination="@id/allCoffeeListFragment" />
+        <action
+            android:id="@+id/action_allCoffeeListFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/coffeeDetailFragment"
+        android:name="com.example.coffeeorderapp.CoffeeDetailFragment"
+        android:label="fragment_coffee_detail"
+        tools:layout="@layout/fragment_coffee_detail" >
+        <action
+            android:id="@+id/action_coffeeDetailFragment_to_allCoffeeListFragment"
+            app:destination="@id/allCoffeeListFragment" />
+
+
+        <argument
+            android:name="coffeename"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="imageurl"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="price"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_coffeeDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_coffeeDetailFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_coffeeDetailFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.coffeeorderapp.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_allCoffeeListFragment"
+            app:destination="@id/allCoffeeListFragment" />
+        <action
+            android:id="@+id/action_cartFragment_self"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_profileActivity3"
+            app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_cartFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.coffeeorderapp.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="com.example.coffeeorderapp.ProfileActivity"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.coffeeorderapp.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_allCoffeeListFragment"
+            app:destination="@id/allCoffeeListFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_ordersFragment_self"
+            app:destination="@id/ordersFragment" />
+    </fragment>
+</navigation>
